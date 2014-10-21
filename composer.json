@@ -1,0 +1,11 @@
+{
+    "name": "satoshi/php",
+    "require": {
+        "intervention/image": "2.*",
+        "swiftmailer/swiftmailer": "@stable",
+        "respect/validation": "@stable"
+    },
+   "autoload": {
+     "psr-0": {"respect/validation": "src"}
+   }
+}

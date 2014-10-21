@@ -1,0 +1,612 @@
+@charset 'utf-8';
+
+/**
+ * setting
+ */
+$gray-lighter:#F2F2F2;
+$link-color:#051187;
+$link-hover-color:#950067;
+$red-color:#b12704;
+$cursive:'Great Vibes', 'Monotype Corsiva', 'Zapf Chancery',cursive;
+// font-family: 'Great Vibes', cursive;
+// 'Pinyon+Script::latin'
+
+//extend
+.itemListBorder{
+	> li {
+		border-top:1px solid $gray-lighter;
+		padding: 10px 0;
+
+		&:last-child{
+			border-bottom:1px solid $gray-lighter;
+		}
+	}
+}
+
+.contentH1 {
+		h1{
+		font-size:24px;
+		border-bottom: 1px solid $gray-lighter;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+/**
+ * bootstrap override
+ */
+h1, h2{
+	margin-top: 0;
+}
+ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+a{
+	color: #051187;
+}
+
+a:hover{
+	color: #950067;
+}
+
+.error {
+	color: $red-color;
+}
+
+//カルーセルスライダーの矢印の幅を縮める
+.carousel-control {
+	width: 5%;
+}
+//カルーセルのインジケーターの位置を下げる	
+.carousel-indicators {
+	bottom: 0;
+}
+
+/**
+ * grid system
+ */
+.contentMainVisual{
+	.g640{
+		width: 640px;
+		float: left;
+	}
+
+	.g320{
+		width: 320px;
+		float: left;
+	}
+
+	//画像hover時に光る
+	a:hover img{
+		opacity:0.8;
+		filter:alpha(opacity=80);
+		-ms-filter: “alpha( opacity=80 )”;
+	}
+}
+
+.contentInnerMainRankingItemsList {
+	li.g240{
+		float: left;
+		width: 240px;
+		margin-right: 30px;
+		margin-left: 0;
+
+		&:last-child {
+			margin-right: 0;
+
+		}
+	}
+
+}
+
+.contentInnerMainRankingItemsListSubDl1 {
+	float: left;
+	width: 110px;
+	margin-right: 20px;
+}
+
+.contentInnerMainRankingItemsListSubDl2 {
+	float: left;
+	width: 110px;
+}
+
+.alpha {
+  margin-left: 0;
+}
+
+.omega {
+  margin-right: 0;
+}
+
+.ml140 {
+	margin-left: 140px;
+}
+
+.ml160 {
+	margin-left: 160px;	
+}
+
+.ml200 {
+	margin-left: 200px;	
+}
+
+aside.g160{
+		width: 160px;
+}
+
+/**
+ * header
+ */
+header{
+	// background: #332f30;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	.logo{
+		background: url("../img/logo.png") top center no-repeat;
+		width: 164px;
+		height: 26px;
+		display: block;
+		text-decoration: none;
+		font-family: $cursive;
+		margin-bottom:0;
+	}
+
+	.headerDescription {
+		font-size:12px;
+		width: 400px;
+	}
+
+	.headerNavList {
+		float: right;
+		li{
+			float: left;
+			width: 150px;
+			margin-right: 30px;
+
+			.btn{
+				width: 150px;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		#menu1 {
+			width: 100%;
+		}
+	}
+
+
+}
+
+/**
+ * トップ画面
+ */
+.contentMainVisual{
+	li a{
+		display: block;
+	}
+}
+
+.contentMainVisualList li{
+	float: left;
+	width: 320px;
+}
+
+.contentMainVisualSubList {
+	li {
+		position: relative;	
+		margin-bottom: 20px;
+	}
+
+	img {
+	//imgの下に出来る隙間を埋める
+	vertical-align: bottom;
+	}
+
+	p {
+		position: absolute;
+		line-height: 30px;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		background: rgba(0,0,0,.45);
+		color: white;
+		font-size:30px;
+		font-family: $cursive;
+		margin-bottom: 0; 
+	}
+
+	span {
+		vertical-align: text-top;
+	}
+}
+
+//トップ画面のナビ
+.contentInnerSide {
+	dt{
+		font-size: 18px;
+		border-bottom:1px solid $gray-lighter;
+		margin-bottom:8px;
+
+	}
+
+	//最初のdt以外
+	dt:nth-child(n+2) {
+		margin-top:15px;
+	}
+
+	dd {
+		margin-bottom: 3px;
+	}
+}
+
+.contentInnerSideForm {
+	input[type="text"] {
+		position: relative;
+		width: 85%;
+	}
+
+	input[type="submit"] {
+		
+	}
+}
+
+//トップ画面のメイン
+.contentInnerMain{
+
+	h1{
+		border-bottom:1px solid $gray-lighter;
+		margin-bottom: 10px;
+		font-weight: bold;
+		font-size:18px;
+		padding-bottom:3px;
+	}
+
+	dl{
+		margin-bottom: 30px;
+	}
+	dd{
+		margin-top: 5px;
+		font-size:12px;
+		span{
+			font-size:11px;
+			color:gray;			
+		}
+	}
+
+}
+
+//新着アイテム、ランキング
+.contentInnerMainNewItems,
+.contentInnerMainRankingItems {
+	h1 {
+		font-family: $cursive;
+		font-size:26px;
+		letter-spacing: 3pt;
+		margin-bottom: 20px;
+
+		span {
+			padding-left: 5px;
+			font-size:12px;
+			color:#666;
+			letter-spacing: 0;
+		}
+	}
+
+}
+
+.contentInnerMainRankingItemsList{
+	h2 {
+		text-align: center;
+		font-weight: bold;
+		font-size:16px;
+	}
+
+	dt {
+		font-family: $cursive;
+	}
+}
+
+
+/**
+ * 商品詳細画面
+ */
+.contentItem{
+	@extend .contentH1;
+
+	h2{
+		font-size:16px;
+		span{
+			font-size:18px;
+		}
+	}
+
+	.btn{
+		width: 100%;
+	}
+
+	form{
+		padding-bottom: 8px;
+		border-bottom:1px solid $gray-lighter;
+		margin-bottom: 8px;
+	}
+
+	//jquery.elevatezoom.js用のCSS
+	#gallery_01 img{border:2px solid white;} 
+	.active img{border:2px solid #333 !important;}
+	.contentItemLeftMainImg{
+		margin-bottom: 20px;
+	}
+	.subImglist li{
+		float: left;
+		width: 60px;
+		height: 120px;
+		margin-right: 20px;
+	}
+	.subImglist li:nth-child(5n) {
+		margin-right: 0;
+	}
+}
+
+.contentItemCenter{
+	section {
+		margin-bottom: 50px;
+	}
+}
+
+.contentItemRight{
+	border-radius: 3px;
+	border:1px solid $gray-lighter;
+	padding:15px;
+
+	select {
+		width: 100%;
+	}
+}
+
+
+/**
+ * カート
+ */
+.contentCart {
+	h1{
+		font-size: 20px;
+		margin: 20px 0;
+	}
+}
+
+.contentCartInnerListDeleteForm {
+	margin-top: 20px;
+
+	input[type="submit"] {
+		border: 0;
+		padding: 0;
+		background: transparent;
+		color:$link-color;
+		&:hover {
+			color:$link-hover-color;
+			text-decoration: underline;
+		}
+	}
+}
+
+.contentItemRightNextForm {
+	.btn{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+.contentItemRightNextFormList {
+	clear: both;
+	span {
+		float: right;		
+	}
+}
+
+.contentItemRightNextFormListSumTotal {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid $gray-lighter;
+	color: $red-color;
+	font-size:16px;
+}
+
+.contentCartEmpty{
+	p{
+		text-align: center;
+	}
+
+	.contentCartEmptyMessage{
+		padding: 70px 0;
+		border-bottom:1px solid $gray-lighter;
+	}
+
+	.btn{
+		width: 260px;
+		height: 36px;
+	}
+}
+
+.contentCartList{
+	 @extend .itemListBorder;
+}
+
+
+/**
+ * ログイン/会員登録画面
+ */
+.contentLogin {
+	h1 {
+		font-size:20px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	h2{
+		font-size:16px;
+	}
+
+	input[type="submit"] {
+		margin-top: 10px;
+		margin-left: 135px;
+		width: 300px;
+		height: 36px;
+	}
+
+}
+
+.contentLoginRadioArea {
+	margin-bottom: 15px;
+}
+
+.contentLoginTabFormInput,
+.contentRegisterTabFormInput{
+	background: $gray-lighter;
+	border-radius:3px;
+	padding:15px;
+
+	.form-group:last-child {
+		margin-bottom: 0;
+	}
+
+	label{
+		width: 100px;
+		margin-right: 20px;
+
+		&[for="termOfUse"]{
+			width: 100%;
+			margin-left: 135px;
+		}
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		width: 300px;
+		padding: 5px;
+	}
+}
+
+.contentRegisterTabFormInputTermOfUse{
+	height: 150px;
+	overflow: auto;
+	background: white;
+	border:1px solid black;
+	margin-bottom: 10px;
+}
+
+
+/**
+ * レジスタ画面
+ */
+.contentRegister {
+	h1 {
+		font-size:20px;
+	}
+
+}
+
+.contentRegisterRequire {
+	color:$red-color;
+}
+
+
+/**
+ * 注文確認画面
+ */
+.contentOrderConfirm{
+	h1{
+		font-size:20px;
+	}
+
+	h2{
+		display: inline-block;
+		font-weight: bold;
+	}
+	h2,li{
+		font-size:14px;
+	}
+}
+
+.contentOrderConfirmList {
+	> li {
+		border-top: 1px solid $gray-lighter;
+		padding: 13px 0;
+
+		&:last-child {
+			border-bottom: 1px solid $gray-lighter;
+		}
+
+		a {
+			font-size: 12px;
+			font-weight: normal;
+		}
+	}
+}
+
+.contentOrderConfirmListItemList {
+
+	li {
+		margin-bottom: 10px;
+	}
+
+}
+
+
+/**
+ * 注文完了画面
+ */
+.contentComplete {
+	p {
+		text-align: center;
+	}
+}
+
+.contentCompleteOutofStock {
+	margin: 0 auto;
+	width: 600px;
+	p {
+		text-align: left;
+	}
+
+	 
+}
+
+.contentCompleteOutofStockList{
+	@extend .itemListBorder;
+}
+
+
+/**
+ * 注文履歴画面
+ */
+.contentOrderHistoryList {
+	@extend .itemListBorder;	
+}
+
+
+.contentOrderHistoryListLeftListItem {
+	margin-bottom: 15px;
+}
+
+
+/**
+ *  検索結果画面
+ */
+.contentSearch {
+	@extend .contentH1;
+}
+
+/**
+ * footer
+ */
+footer{
+	text-align: center;
+	padding: 10px 0;
+	color:#666;
+}
