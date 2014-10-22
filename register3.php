@@ -1,8 +1,6 @@
 <?php
 session_start();
-require_once("lib.php");
-require_once('userModel.php');
-require_once('register3.tmpl.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
 $userModel = new UserModel();
 $id = $userModel->insert([
@@ -15,5 +13,5 @@ $id = $userModel->insert([
 if( $id ){
 	echo "{$id}が登録されました。";
 }else{
-	echo "登録に失敗しました。";	
+	echo "登録に失敗しました。";
 }

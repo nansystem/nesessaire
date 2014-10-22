@@ -6,6 +6,22 @@
         "respect/validation": "@stable"
     },
    "autoload": {
-     "psr-0": {"respect/validation": "src"}
+	    "psr-0": {"respect/validation": "src"},
+    	"classmap": [
+            "productModel.php",
+            "categoryModel.php",
+            "userModel.php",
+            "authModel.php",
+            "cartModel.php",
+            "itemModel.php",
+            "orderModel.php",
+            "stockModel.php",
+            "orderDetailModel.php",
+            "database.php"
+        ],
+	    "files": [
+	        "lib.php",
+            "passwordHash.php"
+	    ]
    }
 }

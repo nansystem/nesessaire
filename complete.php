@@ -1,12 +1,6 @@
 <?php
 session_start();
-require_once('lib.php');
-require_once('authModel.php');
-require_once('cartModel.php');
-require_once('itemModel.php');
-require_once('stockModel.php');
-require_once('orderModel.php');
-require_once('orderDetailModel.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
 $cartModel = new CartModel();
 $itemModel = new ItemModel();
@@ -24,13 +18,13 @@ if ( !AuthModel::isLoggedIn() ){
 if( !$user = AuthModel::userCheck() ){
 	header('Location: register1.php?redirect=order.php');
 	exit();
-}	
+}
 
 //注文内容確認
 $itemIds = $cartModel->getAll();
 //カートに1個も商品がない場合はトップページへリダイレクトする
 if( empty($itemIds) ){
-	header('Location: index.php');	
+	header('Location: index.php');
 	exit();
 }
 
@@ -90,12 +84,12 @@ foreach ($items as $item) {
 	$orderDetailModel->insert([
 		'order_id' => $orderId,
 		'item_id' => $item->item_id,
-		'product_name' => $item->product_name,		
-		'color_name' => $item->color_name,		
-		'size_name' => $item->size_name,		
-		'sale_price' => $item->list_price,		
-		'image_url' => $item->image_url,		
-		'quantity' => $item->quantity,		
+		'product_name' => $item->product_name,
+		'color_name' => $item->color_name,
+		'size_name' => $item->size_name,
+		'sale_price' => $item->list_price,
+		'image_url' => $item->image_url,
+		'quantity' => $item->quantity,
 	]);
 }
 

@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once("lib.php");
-require_once('vendor/autoload.php');
+require_once __DIR__ . '/vendor/autoload.php';
 use Respect\Validation\Validator as v;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -24,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$_POST['tel'] = convertNumber( $_POST['tel'] );
 	    $validator->assert( $_POST );
 	} catch(\InvalidArgumentException $e) {
-	    $errors = $e->findMessages(['nameEmpty', 'nameMax', 
+	    $errors = $e->findMessages(['nameEmpty', 'nameMax',
 	    							'furiganaEmpty', 'furiganaMax',
 	    							'zipcodeEmpty', 'zipcodeLength',
 	    							'xmpfBetween',
@@ -41,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$_SESSION = array_merge($_SESSION, $_POST);;
 		header('Location: register2.php');
 		exit();
-	} 
+	}
 
 }
 

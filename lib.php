@@ -1,6 +1,5 @@
 <?php
-require_once('passwordHash.php');
-
+require_once __DIR__ . '/vendor/autoload.php';
 
 /**
  * リクエスト情報に値がセットされている場合は、その値を返却する。

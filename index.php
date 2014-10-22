@@ -1,8 +1,6 @@
 <?php
 session_start();
-require_once("lib.php");
-require_once("productModel.php");
-require_once("categoryModel.php");
+require_once __DIR__ . '/vendor/autoload.php';
 require_once("sidebar.php");
 
 $productModel = new ProductModel();

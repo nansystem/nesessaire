@@ -1,6 +1,5 @@
 <?php
-require_once 'passwordHash.php';
-require_once 'database.php';
+require_once __DIR__ . '/vendor/autoload.php';
 class UserModel extends Database{
 
 	private $table = "users";

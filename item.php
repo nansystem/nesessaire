@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once('itemModel.php');
-require_once('lib.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
 $itemModel = new ItemModel();
 $item = $itemModel->getById( h($_GET['item_id']) );
