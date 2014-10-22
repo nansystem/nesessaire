@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once("lib.php");
-require_once("userModel.php");
+require_once __DIR__ . '/vendor/autoload.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$userModel = new UserModel();

@@ -1,10 +1,6 @@
 <?php
 session_start();
-require_once('lib.php');
-require_once('authModel.php');
-require_once('cartModel.php');
-require_once('itemModel.php');
-require_once('orderModel.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
 $cartModel = new CartModel();
 $itemModel = new ItemModel();
@@ -20,13 +16,13 @@ if ( !AuthModel::isLoggedIn() ){
 if( !$user = AuthModel::userCheck() ){
 	header('Location: register1.php?redirect=order.php');
 	exit();
-}	
+}
 
 //注文内容確認
 $itemIds = $cartModel->getAll();
 //カートに1個も商品がない場合はトップページへリダイレクトする
 if( empty($itemIds) ){
-	header('Location: index.php');	
+	header('Location: index.php');
 }
 
 $items = $itemModel->getItems( $itemIds );

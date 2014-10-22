@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once('productModel.php');
-require_once('lib.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
 $product_id = h($_GET['product_id']);
 $productModel = new productModel();

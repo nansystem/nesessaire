@@ -1,7 +1,6 @@
 <?php
-require_once("lib.php");
-require_once("userModel.php");
-require_once('vendor/autoload.php');
+require_once __DIR__ . '/vendor/autoload.php';
+
 use Respect\Validation\Validator as v;
 session_set_cookie_params(365 * 24 * 3600);
 session_start();
@@ -66,13 +65,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 					'email1' => $_POST['email'],
 					'password' => $_POST['password']
 				]);
-			
+
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['user_id'] = $user_id;
 			$redirect = isset( $_POST['redirect'] ) ? $_POST['redirect'] : 'index.php';
 			header("Location: $redirect");
 			exit();
-		} 
+		}
 
 	}
 

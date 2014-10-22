@@ -1,9 +1,6 @@
 <?php
 session_start();
-require_once('lib.php');
-require_once('authModel.php');
-require_once('cartModel.php');
-require_once('itemModel.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
 $cartModel = new CartModel();
 $itemModel = new ItemModel();
